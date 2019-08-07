@@ -1,13 +1,14 @@
 <?php
 $lang = array(
+    'langDisplay' => 'عربي',
     'dir' => 'ltr',
-    'lang' => 'en',
+    'lang' => 'ar',
     'update' => 'Update',
     'logout' => 'Log out',
     'profile' => 'Profile',
     'changepassword' => 'Change Password',
 
-
+    
     'messages' => 'Messages',
     'sent' => 'Sent',
     'receive' => 'Receive',

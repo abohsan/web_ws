@@ -1,7 +1,8 @@
 <?php
 $lang = array(
+    'langDisplay' => 'English',
     'dir' => 'rtl',
-    'lang' => 'ar',
+    'lang' => 'en',
     'update' => 'تحديث',
     'logout' => 'تسجيل الخروج',
     'profile' => 'الملف الشخصي',
