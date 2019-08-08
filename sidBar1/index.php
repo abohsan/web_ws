@@ -1,5 +1,13 @@
 <?php
 require_once 'core/init.php';
+$load;
+
+if (in_array($_POST['sidebar'], $sidebarsArray)) {
+    $_POST['currentSidebar'] = $_POST['sidebar'];
+    $load = $_POST['sidebar'];
+} else if (!empty($_POST['currentSidebar'])) {
+    $load = $_POST['currentSidebar'];
+} else { }
 
 ?>
 
@@ -10,52 +18,73 @@ require_once 'core/init.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Begin link tag-->
+    <link rel="stylesheet" href="css/genral.css">
+    <!-- Begin side bar 1-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <title>Side Bar 1</title>
+    <link rel="stylesheet" href="css/1.css">
+    <!-- End side bar 1-->
+
+
+    <!-- Begin side bar 2-->
+    <!-- The following link has been included above -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> -->
+   
+    <link rel="stylesheet" href="css/2.css">
+    <!-- End side bar 2-->
+
+    <!-- End link tag--->
+
+
+
+    <title>Side Bar</title>
 </head>
 
 <body>
-    <div class="language">
-        <a href=" <?php echo $_SERVER['PHP_SELF'] . '?lang=' . $lang['lang'];  ?>"> <?php echo $lang['langDisplay'] ?></a>
+    <div class="first">
+        <form action="" method="post">
+            <input type="hidden" name="currentSidebar" value="<?php echo $_POST['currentSidebar'];  ?>">
 
+            <input type="hidden" name="lang" value="<?php echo $lang['lang'];  ?>">
+            <input type="submit" value="<?php echo $lang['langDisplay'] ?>">
+
+        </form>
+
+        <form action="" method="post">
+
+            <div>
+                <input type="hidden" name="currentSidebar" value="<?php echo $_POST['currentSidebar'];  ?>">
+
+                <input type="text" name="sidebar" value="<?php echo $_POST['sidebar'] ?>">
+            </div>
+            <div>
+                <input type="submit" value="<?php echo $lang['submit'] ?>">
+            </div>
+        </form>
     </div>
+    <?php
 
-    <div class="wrapperSideBar">
+    if (!empty($load)) {
+        include 'sidebarsPHP/' . $load . '.php';
+    }
 
-        <li class="item">
-            <div class="btn" id="profile"><i class="far fa-user"></i><?php echo $lang['profile'] ?></div>
-            <div class="smenu" id="profile1">
-                <a href="#"> <?php echo $lang['update'] ?></a>
-                <a href="#"> <?php echo $lang['changepassword'] ?></a>
-            </div>
-        </li>
-        <li class="item">
-            <div href="#messages" id="messages" class="btn"><i class="far fa-envelope"></i><?php echo $lang['messages'] ?></div>
-            <div class="smenu" id="messages1">
-                <a href="#"> <?php echo $lang['sent'] ?></a>
-                <a href="#"> <?php echo $lang['receive'] ?></a>
-                <a href="#"> <?php echo $lang['spam'] ?></a>
-            </div>
-        </li>
-        <li class="item">
-            <div href="#settings" id="settings" class="btn"><i class="fas fa-cog"></i><?php echo $lang['sitting'] ?></div>
-            <div class="smenu" id="settings1">
-                <a href="#"> <?php echo $lang['notification'] ?></a>
-                <a href="#"> <?php echo $lang['privacy'] ?></a>
-                <a href="#"> <?php echo $lang['privacy'] ?></a>
-            </div>
-        </li>
-        <li class="item">
-         
-        <!-- the redirecting URL has been disabled using JS at mine.js -->
-            <a href="" class="btn"><i class="fas fa-sign-out-alt"></i><?php echo $lang['logout'] ?></a>
 
-        </li>
-    </div>
 
+
+    ?>
+
+    <!--Begin script tag  -->
+
+    <!-- Begin sidebar 1-->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/mine.js"></script>
+    <script src="js/1.js"></script>
+    <!-- End sidebar 1-->
+
+    <!-- Begin sidebar 2-->
+    <script src="js/2.js"></script>
+    <!-- End sidebar 2-->
+
+    <!--End script tag  -->
 
 </body>
 

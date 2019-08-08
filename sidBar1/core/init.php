@@ -1,8 +1,11 @@
 <?php
 session_start();
 
-$sourceDir = opendir('../sidbar1/languages');
+$sourceDir = opendir('languages');
+
 $langArray = [];
+
+
 
 while (($entry = readdir($sourceDir)) != FALSE) {
     if ($entry != '.' && $entry != '..') {
@@ -11,14 +14,28 @@ while (($entry = readdir($sourceDir)) != FALSE) {
     }
 }
 
-if (in_array($_GET['lang'], $langArray)) {
-    $_SESSION['lang'] = $_GET['lang'];
-    require_once '../sidbar1/languages/' . $_SESSION['lang'] . '.php';
+if (in_array($_POST['lang'], $langArray)) {
+    $_SESSION['lang'] = $_POST['lang'];
+    require_once 'languages/' . $_SESSION['lang'] . '.php';
 } else {
     if (isset($_SESSION['lang'])) {
-        require_once '../sidbar1/languages/' . $_SESSION['lang'] . '.php';
+        require_once 'languages/' . $_SESSION['lang'] . '.php';
     } else {
         $_SESSION['lang'] = 'ar';
-        require_once '../sidbar1/languages/' . $_SESSION['lang'] . '.php';
+        require_once 'languages/' . $_SESSION['lang'] . '.php';
     }
 }
+
+
+$sourceSidebars = opendir('sidebarsPHP');
+$sidebarsArray = [];
+$currentSidebar;
+while (($entry = readdir($sourceSidebars)) != FALSE) {
+    if ($entry != '.' && $entry != '..') {
+        $entry =  substr($entry, 0, -4);
+        $sidebarsArray[] =  $entry;
+    }
+}
+
+
+

@@ -1,0 +1,82 @@
+
+.sidebar2-wrapper {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+    text-align: start;
+    position: absolute;
+    top:40px;
+}
+
+.sidebar2-wrapper .sidebar-menu{
+    width: 200px;
+    border-radius: 8px  ;
+    overflow: hidden;
+}
+
+.sidebar2-wrapper .sidebar-item{
+    border-top: 1px solid #2980b9;
+    overflow: hidden;
+}
+
+.sidebar2-wrapper .sidebar-btn{
+    display: block;
+    padding: 16px 20px;
+    background: #3498db;
+    color: white;
+    position: relative;
+}
+
+.sidebar2-wrapper .sidebar-btn:before{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #3498db;
+    margin-inline-start :130px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.sidebar2-wrapper .sidebar-btn i{
+    margin-inline-end :10px;
+}
+
+.sidebar2-wrapper .sidebar-smenu {
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.sidebar2-wrapper .sidebar-smenu a{
+    display:block;
+    padding: 16px 26px;
+    color: white;
+    font-size: 14px;
+    margin: 4px 0;
+    position: relative;
+}
+
+.sidebar2-wrapper .sidebar-smenu a:before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+     background: #3498db;
+    left: 0;
+    top:0;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.sidebar2-wrapper .sidebar-smenu a:hover:before{
+    opacity: 1;
+}
+
+.sidebar2-wrapper .sidebar-item:target .sidebar-smenu{
+    max-height: 10em;
+}
+
