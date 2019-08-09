@@ -23,15 +23,22 @@ if (in_array($_POST['sidebar'], $sidebarsArray)) {
     <!-- Begin side bar 1-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="css/1.css">
+
     <!-- End side bar 1-->
 
 
     <!-- Begin side bar 2-->
     <!-- The following link has been included above -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> -->
-   
+
     <link rel="stylesheet" href="css/2.css">
     <!-- End side bar 2-->
+
+    <!-- Begin side bar 3-->
+    <link rel="stylesheet" href="css/3.css">
+    <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
+    <!-- End side bar 3-->
+
 
     <!-- End link tag--->
 
@@ -83,6 +90,13 @@ if (in_array($_POST['sidebar'], $sidebarsArray)) {
     <!-- Begin sidebar 2-->
     <script src="js/2.js"></script>
     <!-- End sidebar 2-->
+
+  <!-- Begin sidebar 3-->
+  <script src="js/3.js"></script>
+  <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+    <!-- End sidebar3-->
 
     <!--End script tag  -->
 
