@@ -1,0 +1,11 @@
+.languagesss{
+    border: 2px solid red;
+    text-align: center;
+}
+
+div{
+    border: 1px solid blue; 
+}
+.container-fluid{
+    text-align: initial;
+}

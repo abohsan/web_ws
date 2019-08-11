@@ -4,10 +4,8 @@ $lang = array(
     'dir' => 'ltr',
     'lang' => 'ar',
     'submit' => 'Submit',
-    'text' => 'I love programming so much!',
     
     
-    'home' => 'Home',
     'update' => 'Update',
     'logout' => 'Log out',
     'profile' => 'Profile',
