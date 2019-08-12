@@ -1,0 +1,82 @@
+.sidebar_wrapper{
+    position: fixed;
+    text-align: initial;
+    top:0px;
+    margin-inline-start: 00px;
+    width:  150px;
+    height: 100%;
+    background-color: black;
+    border: 2px solid red;
+    color: white;
+    padding-top: 61px;
+    transition: 0.8s all;
+}
+  
+.side{
+    margin-inline-start:  -150px;
+}
+.sidebar_wrapper .sidebar{
+    border: 2px solid blue;
+}
+
+.sidebar_wrapper .btn{
+    border: 2px solid gold;
+    width: 100%;
+}
+
+.subbtn{
+    border: 2px solid gold;
+    background-color: aqua;
+}
+
+.dbtn{
+    z-index: 1;
+    position: absolute;
+    float: inline-start;
+    top:65px;
+    margin-inline-start: 150px;
+    padding: 0 0px;
+    font-size: 40px;
+    text-decoration: none;
+    color: #2c3e50;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border: 2px solid greenyellow;
+   /* cursor: grab; */
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 100%;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.bar1c {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.bar2c {
+    opacity: 0;
+}
+  
+.bar3c {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.btn{
+    padding: 0;
+}
+
+.sidebar_wrapper .btn .btn1:hover{
+    background-color: aliceblue;
+}
+.sidebar_wrapper .btn .subbtn:hover{
+    background-color: goldenrod;
+}
+.hilight{
+ background-color: red;
+}

@@ -1,11 +1,10 @@
-.languagesss{
-    border: 2px solid red;
-    text-align: center;
-}
-
-div{
-    border: 1px solid blue; 
-}
 .container-fluid{
+    background-color: aqua;
+    margin-top: 61px;
+    padding-inline-start:  205px;
     text-align: initial;
+    transition: 0.8s;
+} 
+.container-fluidC{
+  padding-inline-start: 40px;
 }
