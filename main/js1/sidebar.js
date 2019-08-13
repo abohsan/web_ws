@@ -1,15 +1,11 @@
-
 $('.submenu').hide();
 var currentShow = '0';
 var currentSubbtn = '0';
 currentShow = $('#currentMenu').val();
 currentSubbtn = $('#currentSubMenu').val();
 
-
 if(!currentShow){currentShow = '0'}
 if(!currentSubbtn){currentSubbtn = '0'}
-
-
 
 if (currentShow != '0') {
     $('#' + currentShow).slideDown(200);
@@ -34,15 +30,12 @@ $('.btn1').on('click', function () {
         $('#' + theID).slideDown(200);
         currentShow = theID;
         $('#currentMenu').val(theID);
-
     } else {
         $('#' + theID).slideUp(200);
         currentShow = '0';
         $('#currentMenu').val('0');
     }
-
 });
-
 
 $('.subbtn').on('click', function () {
     var theID = $(this).attr('ID');
@@ -50,10 +43,16 @@ $('.subbtn').on('click', function () {
         $('#' + theID).addClass("hilight");
         currentSubbtn = theID;
         $('#currentSubMenu').val(theID);
+            $.post('functions/files.php', {isOpen:currentSubbtn},function(data){
+            $('#tellme').load(data);
+            })
     } else if (currentSubbtn != theID) {
         $('#' + currentSubbtn).removeClass("hilight");
         $('#' + theID).addClass("hilight");
         currentSubbtn = theID;
         $('#currentSubMenu').val(theID);
+        $.post('functions/files.php', {isOpen:currentSubbtn},function(data){
+            $('#tellme').load(data);
+            })
     }
 });

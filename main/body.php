@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" id="tellme">
 
 <h3>1. Navbar Text 0</h3>
      <p id="p1">2. Use the .navbar-text class to vertical align any elements inside the navbar that are not links (ensures proper padding).</p>

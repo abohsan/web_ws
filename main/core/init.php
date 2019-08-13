@@ -1,8 +1,13 @@
 <?php
 session_start();
+$projectPath = $_SERVER['DOCUMENT_ROOT'];
+spl_autoload_register(function ($class) {
+    $projectPath = $_SERVER['DOCUMENT_ROOT'];
+    $rootPath = $projectPath ;         
+    require_once $rootPath . '/' . 'classes/' . $class . '.php';
+});
 
-// Beginning of language file
-$sourceDir = opendir('languages');
+$sourceDir = opendir($projectPath.'/languages');
 $langArray = [];
 while (($entry = readdir($sourceDir)) != FALSE) {
     if ($entry != '.' && $entry != '..') {
@@ -13,25 +18,12 @@ while (($entry = readdir($sourceDir)) != FALSE) {
 
 if (in_array($_POST['lang'], $langArray)) {
     $_SESSION['lang'] = $_POST['lang'];
-    require_once 'languages/' . $_SESSION['lang'] . '.php';
+    require_once $projectPath.'/'.'languages/' . $_SESSION['lang'] . '.php';
 } else {
     if (isset($_SESSION['lang'])) {
-        require_once 'languages/' . $_SESSION['lang'] . '.php';
+        require_once $projectPath .'/'.'languages/' . $_SESSION['lang'] . '.php';
     } else {
         $_SESSION['lang'] = 'ar';
-        require_once 'languages/' . $_SESSION['lang'] . '.php';
+        require_once $projectPath .'/'.'languages/' . $_SESSION['lang'] . '.php';
     }
 }
-
-// $cssDir = opendir('css');
-// $cssArray = [];
-// while (($entry = readdir($cssDir)) != FALSE) {
-//     if ($entry != '.' && $entry != '..') {
-//         $cssArray[] =  $entry;
-//     }
-// }
-
-// End of language file 
-
-
-
