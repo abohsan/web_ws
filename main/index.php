@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css1/style.css">
     <link rel="stylesheet" href="css1/sidebar.css">
     <title>Main</title>
+    <!-- Private -->
 </head>
 
 <?php include 'header.php' ?>
